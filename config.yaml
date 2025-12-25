@@ -1,0 +1,44 @@
+# 配置文件
+
+# 数据配置
+data:
+  dataset_path: "./data/nyu_depth_v2"
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  image_size: [480, 640]  # NYU Depth V2 标准尺寸
+  batch_size: 4
+  num_workers: 4
+
+# 模型配置
+model:
+  name: "blip2"  # 可选: "blip2" 或 "llava"
+  grounding_model: "groundingdino_swinb_cogcoor.pth"
+  blip2_model: "Salesforce/blip2-opt-2.7b"
+  llava_model: "llava-hf/llava-1.5-7b-hf"  # 如果使用 LLaVA
+  device: "cuda"  # 或 "cpu"
+  precision: "fp16"  # 或 "fp32"
+
+# 训练配置
+training:
+  num_epochs: 10
+  learning_rate: 1e-5
+  weight_decay: 0.01
+  warmup_steps: 500
+  save_dir: "./checkpoints"
+  log_dir: "./logs"
+  save_every: 1
+  eval_every: 1
+
+# 任务配置
+tasks:
+  grounding:
+    enabled: true
+    threshold: 0.3
+  counting:
+    enabled: true
+    threshold: 0.3
+  vqa:
+    enabled: true
+    max_length: 50
+
