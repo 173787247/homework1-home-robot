@@ -67,3 +67,4 @@ def visualize_results(image: Image.Image, results: List[Dict],
     draw_image.save(output_path)
     print(f"可视化结果已保存到: {output_path}")
 
+

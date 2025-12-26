@@ -8,3 +8,4 @@ from .vqa import VQATask
 
 __all__ = ['GroundingTask', 'CountingTask', 'VQATask']
 
+

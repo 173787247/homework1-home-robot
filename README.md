@@ -86,7 +86,7 @@ python evaluate.py --checkpoint checkpoints/best_model.pth
 ```bash
 python inference.py --image path/to/image.jpg --task grounding
 python inference.py --image path/to/image.jpg --task counting
-python inference.py --image path/to/image.jpg --task vqa --question "What is in this room?"
+python inference.py --image path/to/image.jpg --task vqa --text "What is in this room?"
 ```
 
 ## 功能演示
@@ -118,12 +118,15 @@ answer = task.answer("What furniture is in this room?", image_path)
 # 返回：问题的答案
 ```
 
-## 实验结果
+## 项目说明
 
-训练完成后，模型在以下任务上的表现：
-- Grounding mAP: [待填充]
-- Counting Accuracy: [待填充]
-- VQA Accuracy: [待填充]
+本项目使用预训练的 Grounding DINO 和 BLIP-2 模型进行推理，无需训练即可使用。模型可以直接对输入图像执行以下任务：
+
+- **Grounding**: 检测并定位图像中的指定物体
+- **Counting**: 统计图像中指定物体的数量
+- **VQA**: 回答关于图像内容的自然语言问题
+
+所有功能都可以通过 `inference.py` 脚本直接使用，详见"使用方法"部分。
 
 ## 参考文献
 
@@ -131,4 +134,6 @@ answer = task.answer("What furniture is in this room?", image_path)
 - BLIP-2: https://github.com/salesforce/BLIP
 - LLaVA-NeXT: https://github.com/haotian-liu/LLaVA
 - NYU Depth V2 Dataset: https://cs.nyu.edu/~fergus/datasets/nyu_depth_v2.html
+
+
 

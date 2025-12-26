@@ -66,3 +66,4 @@ class VQATask:
         description = self.model.describe_image(image)
         return description
 
+

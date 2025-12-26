@@ -146,3 +146,4 @@ class BLIP2Model:
         else:
             return "This appears to be a well-furnished indoor space with various household items."
 
+
